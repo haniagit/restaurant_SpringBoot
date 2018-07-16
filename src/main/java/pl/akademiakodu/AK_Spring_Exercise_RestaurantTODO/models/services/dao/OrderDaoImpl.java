@@ -52,7 +52,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public void addMealToOrder(OrderR order, Meal meal) {
-        //todo repair
+//        todo repair
         List<Meal> ourMeals = order.getMealList();
         ourMeals.add(meal);
         order.setMealList(ourMeals);

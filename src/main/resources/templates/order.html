@@ -13,7 +13,7 @@
             <p th:text="${welcome}"></p><br>
             <p th:text="${menu}"></p><br>
             <right><p th:if="${userName}!=null" th:text="${userName}"></p></right><br>
-            <form method="get" th:action="@{/order}" th:object="${userRequest}" >
+            <form method="post" th:action="@{/order}" th:object="${userRequest}" >
                 <input th:if="${userName}==null" type="text" th:field="*{name}" placeholder="your name">
                 <input type="text" th:field="*{mealName}" placeholder="meal name"><br>
                 <input type="submit" th:value="AddToOrder" name="addOrder" style="width: 150px; background-color: cornflowerblue">
