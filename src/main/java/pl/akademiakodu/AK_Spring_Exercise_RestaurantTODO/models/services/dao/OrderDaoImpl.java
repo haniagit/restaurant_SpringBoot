@@ -8,6 +8,7 @@ import pl.akademiakodu.AK_Spring_Exercise_RestaurantTODO.models.Meal;
 import pl.akademiakodu.AK_Spring_Exercise_RestaurantTODO.models.OrderR;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -52,24 +53,28 @@ public class OrderDaoImpl implements OrderDao {
     @Override
     public void addMealToOrder(OrderR order, Meal meal) {
         //todo repair
-        Set<Meal> ourMeals = (Set<Meal>) order.getMealList();
+        List<Meal> ourMeals = order.getMealList();
         ourMeals.add(meal);
-        order.setMealList((List<Meal>)ourMeals);
+        order.setMealList(ourMeals);
+
     }
 
     @Override
     public void removeMealFromOrder(OrderR order, Meal meal) {
+        List<Meal> ourMeals = order.getMealList();
+        ourMeals.remove(meal);
+        order.setMealList(ourMeals);
         //todo implement
     }
 
     @Override
     public boolean checkIfMealAppearInOurOrder(OrderR order, Meal meal){
         //todo repair
-        for (int i = 0; i > order.getMealList().size(); i++) {
+        for (int i = 0; i < order.getMealList().size(); i++) {
             if (order.getMealList().get(i).equals(meal)){
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }

@@ -3,6 +3,7 @@ package pl.akademiakodu.AK_Spring_Exercise_RestaurantTODO.models;
 /**
  * Imports section
  */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,6 +48,7 @@ public class OrderR {
     public void setMealList(List<Meal> mealList) {
         this.mealList = mealList;
     }
+
 
 }
 

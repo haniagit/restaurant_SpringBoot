@@ -31,6 +31,7 @@ public class OrderDaoImplTest {
      * @throws Exception in case of user input error
      */
     @Test public void testOrder() throws Exception {
+        //assert - odpowiednik if dla testowania
         assertNotNull(orderDao.getAllOrders());
         assertEquals(orderDao.getAllOrders().size(), 0);
         OrderR newOrder = new OrderR();
